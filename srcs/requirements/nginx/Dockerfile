@@ -16,7 +16,7 @@ RUN mkdir -p /etc/nginx/certs/ && \
 COPY	conf/nginx.conf	/etc/nginx/
 COPY	conf/server.conf	/etc/nginx/conf.d/
 
-RUN		echo "\tserver name pibosc.42.fr;\n\
+RUN		echo "\tserver name ${WP_URL};\n\
 			\tssl_certificate /etc/nginx/certs/certificate.crt;\n\
 			\tssl_certificate_key /etc/nginx/certs/certificate.key;\n\
 			}" >> /etc/nginx/conf.d/server.conf
